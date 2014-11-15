@@ -39,7 +39,7 @@ class FerBuy extends PaymentModule
 	{
 		$this->name = 'ferbuy';
 		$this->tab = 'payments_gateways';
-		$this->version = '1.5.2';
+		$this->version = '1.5.3';
 		$this->author = 'FerBuy';
 
 		parent::__construct();
@@ -480,7 +480,7 @@ class FerBuy extends PaymentModule
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
 
 		curl_setopt($ch, CURLOPT_TIMEOUT, 80);
-		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
+		curl_setopt($ch, CURLOPT_SSLVERSION, defined(CURL_SSLVERSION_TLSv1) ? CURL_SSLVERSION_TLSv1 : 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
